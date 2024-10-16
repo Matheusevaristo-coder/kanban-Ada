@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #f4f4f4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-filter {
+    display: flex;
+    margin-top: 5px;
+    gap: 10px;
+}
+.type-filter {
+    display: flex;
+    margin-top: 25px;
+    gap: 10px;
+}
+.show-form-btn{
+    display: block;
+    margin: 0 auto;
+    background-color: #007bff;
+    color: white;
+    align-items: center;
+    width: 50%;
+    border: 2px solid #5c7a9b;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.user-icon, .type-icon {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.kanban-board {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.column {
+    width: 30%;
+    background-color: #e2e2e2;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.column h2 {
+    text-align: center;
+}
+
+.card {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.card button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.card .move-left, .card .move-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .move-left {
+    left: -10px;
+}
+
+.card .move-right {
+    right: -10px;
+}
+
+.task-form {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.show-form-btn {
+    margin-bottom: 10px;
+}
+
+/* Media Queries para tornar o layout responsivo */
+
+@media (max-width: 1024px) {
+    .kanban-board {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .column {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .user-filter, .type-filter {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kanban-board {
+        width: 100%;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .card {
+        margin: 10px 0;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .user-icon, .type-icon {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .kanban-board {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .card {
+        margin: 5px 0;
+        padding: 10px;
+    }
+
+    .card .move-left, .card .move-right {
+        width: 16px;
+        height: 16px;
+    }
+}

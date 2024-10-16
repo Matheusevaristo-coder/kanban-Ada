@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="user-filter"> 
+          <span class="user-icon me" onclick="filterTasks('ME')">ME</span>
+          <span class="user-icon ls" onclick="filterTasks('LS')">LS</span>
+        </div>
+        <div class="type-filter">
+            <span class="type-icon" onclick="filterTasksByType('Front end')">Front end</span>
+            <span class="type-icon" onclick="filterTasksByType('Back end')">Back end</span>
+            <span class="type-icon" onclick="filterTasksByType('Full stack')">Full stack</span>
+            <span class="type-icon" onclick="filterTasksByType('Outro')">Outro</span>
+        </div>
+    </div>
+    <div class="kanban-board">
+        <div class="column" id="todo">
+            <h2>TO DO</h2>
+            <button class="show-form-btn" onclick="toggleForm('todo')"> + Adicionar Tarefa</button>
+            <form class="task-form" id="todo-form">
+                <select id="task-title">
+                    <option value="Front end">Front end</option>
+                    <option value="Back end">Back end</option>
+                    <option value="Full stack">Full stack</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                <input type="text" id="task-desc" placeholder="Descrição da tarefa">
+                <select id="task-user">
+                    <option value="ME">ME</option>
+                    <option value="LS">LS</option>
+                </select>
+                <button type="button" onclick="addTask('todo')">Adicionar</button>
+            </form>
+            <div class="tasks"></div>
+        </div>
+        <div class="column" id="in-progress">
+            <h2>IN PROGRESS</h2>
+            <form class="task-form" id="in-progress-form">
+                <select id="task-title">
+                    <option value="Front end">Front end</option>
+                    <option value="Back end">Back end</option>
+                    <option value="Full stack">Full stack</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                <input type="text" id="task-desc" placeholder="Descrição da tarefa">
+                <select id="task-user">
+                    <option value="ME">ME</option>
+                    <option value="LS">LS</option>
+                </select>
+                <button type="button" onclick="addTask('in-progress')">Adicionar</button>
+            </form>
+            <div class="tasks"></div>
+        </div>
+        <div class="column" id="completed">
+            <h2>COMPLETED</h2>
+            <form class="task-form" id="completed-form">
+                <select id="task-title">
+                    <option value="Front end">Front end</option>
+                    <option value="Back end">Back end</option>
+                    <option value="Full stack">Full stack</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                <input type="text" id="task-desc" placeholder="Descrição da tarefa">
+                <select id="task-user">
+                    <option value="ME">ME</option>
+                    <option value="LS">LS</option>
+                </select>
+                <button type="button" onclick="addTask('completed')">Adicionar</button>
+            </form>
+            <div class="tasks"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
