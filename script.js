@@ -1,14 +1,46 @@
+<<<<<<< HEAD
+=======
+// Função para buscar personagens aleatórios da API Rick and Morty
+async function fetchRickAndMortyCharacter() {
+    const randomId = Math.floor(Math.random() * 826) + 1; // 826 personagens no total
+    const response = await fetch(`https://rickandmortyapi.com/api/character/${randomId}`);
+    const data = await response.json();
+    return data.image; // Retorna a URL da imagem do personagem
+}
+
+// Função para adicionar as imagens de ME e LS
+async function loadCharacterImages() {
+    const meImage = await fetchRickAndMortyCharacter(); // Busca um personagem aleatório para ME
+    const lsImage = await fetchRickAndMortyCharacter(); // Busca um personagem aleatório para LS
+
+    // Adiciona as imagens na barra superior
+    document.querySelector('.user-icon.me').innerHTML = `<img src="${meImage}" alt="ME" style="width: 35px; height: 35px; border-radius: 50%;">`;
+    document.querySelector('.user-icon.ls').innerHTML = `<img src="${lsImage}" alt="LS" style="width: 35px; height: 35px; border-radius: 50%;">`;
+}
+
+// Chama a função para carregar as imagens ao carregar a página
+window.onload = loadCharacterImages;
+
+>>>>>>> origin/master
 function toggleForm(columnId) {
     const form = document.getElementById(`${columnId}-form`);
     form.style.display = form.style.display === 'none' || form.style.display === '' ? 'flex' : 'none';
 }
 
+<<<<<<< HEAD
 function addTask(columnId) {
+=======
+async function addTask(columnId) {
+>>>>>>> origin/master
     const column = document.getElementById(columnId);
     const title = column.querySelector('#task-title').value;
     const desc = column.querySelector('#task-desc').value;
     const user = column.querySelector('#task-user').value;
 
+<<<<<<< HEAD
+=======
+    // Cria uma nova tarefa
+>>>>>>> origin/master
     const task = document.createElement('div');
     task.className = 'card';
     task.setAttribute('data-user', user);
