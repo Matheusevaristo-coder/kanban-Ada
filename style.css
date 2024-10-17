@@ -5,48 +5,48 @@ body {
     align-items: center;
     margin: 0;
     padding: 0;
+    background-color: #f5f5f5;
 }
 
 .top-bar {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    padding: 10px;
-    background-color: #f4f4f4;
+    padding: 15px;
+    background-color: #3b5998;
+    color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.user-filter {
+.user-filter, .type-filter {
     display: flex;
-    margin-top: 5px;
-    gap: 10px;
+    gap: 15px;
 }
-.type-filter {
-    display: flex;
-    margin-top: 25px;
-    gap: 10px;
-}
-.show-form-btn{
-    display: block;
-    margin: 0 auto;
-    background-color: #007bff;
+
+.user-icon, .type-icon, .show-form-btn, .card button {
+    background-color: #4a76a8;
     color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 12px;
+    display: flex;
     align-items: center;
-    width: 50%;
-    border: 2px solid #5c7a9b;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.user-icon, .type-icon {
-    background-color: #007bff;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 30px;
+.user-icon:hover, .type-icon:hover, .show-form-btn:hover, .card button:hover {
+    background-color: #2c4870;
+    transform: translateY(-2px);
+}
 
-    font-weight: bold;
-    cursor: pointer;
+.show-form-btn {
+    margin: 10px auto;
+    width: 60%;
+    border: 2px solid #5c7a9b;
 }
 
 .kanban-board {
@@ -57,58 +57,67 @@ body {
 }
 
 .column {
-    width: 30%;
-    background-color: #e2e2e2;
-    padding: 10px;
-    border-radius: 10px;
+    width: 28%;
+    background-color: #e6eaf0;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .column h2 {
     text-align: center;
+    color: #3b5998;
+    margin-bottom: 15px;
+    font-size: 1.2em;
 }
 
 .card {
-    background-color: #fff;
+    background-color: white;
     margin: 10px 0;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.card button {
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+.card .delete {
+    background-color: red;
     position: absolute;
     top: 5px;
     right: 5px;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
+}
+
+.card .edit {
+    background-color: blue;
+    position: absolute;
+    top: 5px;
+    right: 45px;
 }
 
 .card .move-left, .card .move-right {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #007bff;
-    color: white;
-    border: none;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .card .move-left {
-    left: -10px;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .card .move-right {
-    right: -10px;
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .task-form {
@@ -118,11 +127,7 @@ body {
     margin-bottom: 20px;
 }
 
-.show-form-btn {
-    margin-bottom: 10px;
-}
 /* Media Queries para tornar o layout responsivo */
-
 @media (max-width: 1024px) {
     .kanban-board {
         flex-direction: column;
@@ -147,11 +152,7 @@ body {
         align-items: center;
     }
 
-    .kanban-board {
-        width: 100%;
-    }
-
-    .column {
+    .kanban-board, .column {
         width: 100%;
     }
 
