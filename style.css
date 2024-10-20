@@ -6,6 +6,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
+    padding-top: 60px; 
+    
 }
 
 .top-bar {
@@ -16,14 +18,22 @@ body {
     background-color: #3b5998;
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
 }
 
-.user-filter, .type-filter {
+.user-filter,
+.type-filter {
     display: flex;
     gap: 15px;
 }
 
-.user-icon, .type-icon, .show-form-btn, .card button {
+.user-icon,
+.type-icon,
+.show-form-btn,
+.card button {
     background-color: #4a76a8;
     color: white;
     border: none;
@@ -38,7 +48,10 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.user-icon:hover, .type-icon:hover, .show-form-btn:hover, .card button:hover {
+.user-icon:hover,
+.type-icon:hover,
+.show-form-btn:hover,
+.card button:hover {
     background-color: #2c4870;
     transform: translateY(-2px);
 }
@@ -100,7 +113,8 @@ body {
     right: 45px;
 }
 
-.card .move-left, .card .move-right {
+.card .move-left,
+.card .move-right {
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -127,7 +141,17 @@ body {
     margin-bottom: 20px;
 }
 
-/* Media Queries para tornar o layout responsivo */
+.task-date {
+    font-size: 0.9em;
+    color: #888; 
+    margin-top: 5px; 
+}
+
+.task-date.recent {
+    color: #3b5998; 
+    font-weight: bold; 
+}
+
 @media (max-width: 1024px) {
     .kanban-board {
         flex-direction: column;
@@ -147,12 +171,14 @@ body {
         padding: 20px;
     }
 
-    .user-filter, .type-filter {
+    .user-filter,
+    .type-filter {
         flex-direction: column;
         align-items: center;
     }
 
-    .kanban-board, .column {
+    .kanban-board,
+    .column {
         width: 100%;
     }
 
@@ -168,7 +194,8 @@ body {
         text-align: center;
     }
 
-    .user-icon, .type-icon {
+    .user-icon,
+    .type-icon {
         padding: 8px;
         font-size: 14px;
     }
@@ -187,7 +214,8 @@ body {
         padding: 10px;
     }
 
-    .card .move-left, .card .move-right {
+    .card .move-left,
+    .card .move-right {
         width: 16px;
         height: 16px;
     }
